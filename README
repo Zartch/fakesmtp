@@ -1,3 +1,5 @@
+Port to Python3 from:  VaderZ/fakesmtp
+
 Fake SMTP mail server for testing purposes.
 Features:
 - Count a number of received emails
