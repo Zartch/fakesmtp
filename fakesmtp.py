@@ -33,13 +33,13 @@ class FakeSMTPServer(smtpd.SMTPServer):
                 pass
             self.out.update(self.count, self.rate, time.strftime('%H:%M:%S'))
             if self.save:
-                with open(r'mail\mail_%s.txt' % self.count, 'w') as f:
+                with open(r'mail/mail_%s.txt' % self.count, 'w') as f:
                     f.write(''.join([
                         'Time: ', time.ctime(), '\n',
                         'IP: ', peer.__str__(), '\n',
                         'From: ', mailfrom, '\n',
                         'To: ', rcpttos.__str__(), '\n',
-                        'Body: ', data, '\n'
+                        'Body: ', data.decode(), '\n'
                     ]))
         except Exception as e:
             print(e)
